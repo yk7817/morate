@@ -4,8 +4,8 @@ import Image from "next/image";
 const Header = () => {
   return (
     <header className=" bg-slate-950">
-      <div className="flex items-center max-w-9/12 mx-auto">
-        <div className="w-50">
+      <div className="flex items-center gap-10 max-w-9/12 mx-auto py-3">
+        <div className="w-40">
           <Link href="/">
             <Image
               src="/site_logo.png"
