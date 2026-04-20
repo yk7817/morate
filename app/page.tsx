@@ -1,3 +1,9 @@
-export default function Home() {
-  return <div></div>;
+import { HeroSection } from "@/components/features/movies/HeroSection";
+
+export default async function Home() {
+  return (
+    <div>
+      <HeroSection />
+    </div>
+  );
 }
