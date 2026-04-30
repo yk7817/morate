@@ -1,3 +1,21 @@
+export type TrendingAll = {
+  id: number;
+  title?: string; // 映画の場合
+  name?: string; // ドラマの場合
+  overview: string;
+  poster_path: string;
+  backdrop_path: string;
+  vote_average: number;
+  vote_count: number;
+  release_date?: string; // 映画の場合
+  first_air_date?: string; // ドラマの場合
+  genre_ids: number[];
+  popularity: number;
+  media_type: "movie" | "tv";
+  original_language: string;
+  adult: boolean;
+};
+
 export type Movie = {
   id: number;
   title: string;
@@ -10,7 +28,7 @@ export type Movie = {
   release_date: string;
   genre_ids: number[];
   popularity: number;
-  media_type: string;
+  media_type: "movie" | "tv";
   original_language: string;
   adult: boolean;
   video: boolean;
@@ -31,6 +49,11 @@ export type TV = {
   media_type: string;
   original_language: string;
   adult: boolean;
+};
+
+export type ExternalIds = {
+  id: number;
+  imdb_id: string;
 };
 
 export type TMDBResponse<T> = {

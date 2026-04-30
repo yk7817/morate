@@ -1,6 +1,6 @@
 @import "tailwindcss";
-@import "@splidejs/react-splide/css";
-
+@import "swiper/css";
+@import "swiper/css/navigation";
 /* :root {
   --background: #ffffff;
   --foreground: #171717;
