@@ -36,7 +36,7 @@ const Header = () => {
               type="search"
               name="search"
               placeholder="作品を検索"
-              className="bg-neutral-100 rounded py-1 px-2"
+              className="bg-[#131520] rounded py-1 px-2 text-neutral-100 border border-gray-500"
             />
           </div>
           <div className="">
@@ -50,7 +50,7 @@ const Header = () => {
           <div className="">
             <Link
               href="/signup"
-              className="flex items-center justify-center w-28 h-9 text-gray-900 rounded p-2 font-bold bg-neutral-100"
+              className="flex items-center justify-center w-36 h-9 text-gray-900 rounded p-2 font-bold bg-neutral-100"
             >
               アカウント作成
             </Link>
