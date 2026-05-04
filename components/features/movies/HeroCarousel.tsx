@@ -35,7 +35,13 @@ export default function HeroCarousel({ movies, scores }: Props) {
       >
         {movies.map((movie, index) => (
           <SwiperSlide key={movie.id} className="w-full">
-            <Link href={`/movies/${movie.id}`}>
+            <Link
+              href={
+                movie.media_type === "movie"
+                  ? `/movies/${movie.id}`
+                  : `/tv/${movie.id}`
+              }
+            >
               <Image
                 src={`${BASE_URL}/original${movie.backdrop_path}`}
                 alt={movie.title ? movie.title : movie.name}

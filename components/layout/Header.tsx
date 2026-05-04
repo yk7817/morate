@@ -1,20 +1,39 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const path = usePathname();
   return (
     <header className=" bg-slate-950">
       <div className="flex items-center gap-10 max-w-9/12 mx-auto py-3">
         <div className="w-40">
-          <Link href="/">
-            <Image
-              src="/site_logo.png"
-              alt="MoRate"
-              width={400}
-              height={200}
-              className="max-w-full h-auto"
-            />
-          </Link>
+          {path.includes("movies") || path.includes("tv") ? (
+            <div>
+              <Link href="/">
+                <Image
+                  src="/site_logo.png"
+                  alt="MoRate"
+                  width={400}
+                  height={200}
+                  className="max-w-full h-auto"
+                />
+              </Link>
+            </div>
+          ) : (
+            <h1>
+              <Link href="/">
+                <Image
+                  src="/site_logo.png"
+                  alt="MoRate"
+                  width={400}
+                  height={200}
+                  className="max-w-full h-auto"
+                />
+              </Link>
+            </h1>
+          )}
         </div>
         <nav className="justify-self-start">
           <ul className="flex justify-center items-center gap-8">

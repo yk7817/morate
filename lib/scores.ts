@@ -15,3 +15,17 @@ export async function getScoresMovie(
   );
   return scores;
 }
+
+// 映画詳細スコア取得
+export async function getScoreSingleMovie(id: number, type: string) {
+  const externalId = await getExternalIds(id, type);
+  const score = await getOMDBInfo(String(externalId.imdb_id));
+  return score;
+}
+
+// ドラマ詳細スコア取得
+export async function getScoreSingleTV(id: number, type: string) {
+  const externalIds = await getExternalIds(id, type);
+  const score = await getOMDBInfo(String(externalIds.imdb_id));
+  return score;
+}

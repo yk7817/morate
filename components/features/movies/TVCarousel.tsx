@@ -102,18 +102,18 @@ export default function TVCarousel({ tvs, scores, title }: Props) {
             </div>
           </SwiperSlide>
         ))}
-        <div className="absolute bottom-0 left-0 z-1 flex justify-between h-full">
+        <div className="absolute bottom-0 left-0 z-10 flex justify-between h-full pointer-events-none">
           <button
             ref={prevRef}
-            className="movie_prev text-neutral-100 cursor-pointer bg-gray-900/20"
+            className="movie_prev text-neutral-100 cursor-pointer bg-gray-900/20 pointer-events-auto"
           >
             <ChevronLeft className="text-neutral-100 w-15 h-15" />
           </button>
         </div>
-        <div className="absolute bottom-0 right-0 z-1 flex justify-between h-full">
+        <div className="absolute bottom-0 right-0 z-10 flex justify-between h-full">
           <button
             ref={nextRef}
-            className="movie_next text-neutral-100 cursor-pointer bg-gray-900/20"
+            className="movie_next text-neutral-100 cursor-pointer bg-gray-900/20 pointer-events-auto"
           >
             <ChevronRight className="text-neutral-100 w-15 h-15" />
           </button>
