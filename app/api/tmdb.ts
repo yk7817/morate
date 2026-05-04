@@ -5,6 +5,10 @@ import type {
   TV,
   TMDBResponse,
   ExternalIds,
+  MovieDetail,
+  MovieTrailer,
+  TVDetail,
+  TVTrailer,
 } from "@/types/tmdb";
 const TMDB_BASE_URL = process.env.TMDB_BASE_URL;
 const TMDB_API_KEY = process.env.TMDB_API_KEY;
@@ -121,4 +125,23 @@ export async function getExternalIds(
   type: string,
 ): Promise<ExternalIds> {
   return fetchTMDB(`/${type}/${id}/external_ids`, 3600) as Promise<ExternalIds>;
+}
+
+// 個別映画情報取得
+export async function getMovieDetail(id: string): Promise<MovieDetail> {
+  return fetchTMDB(`/movie/${id}?language=ja-JP`, 3600) as Promise<MovieDetail>;
+}
+
+// 映画トレイラー情報を取得
+export async function getMovieTrailer(id: string): Promise<MovieTrailer> {
+  return fetchTMDB(`/movie/${id}/videos`, 3600) as Promise<MovieTrailer>;
+}
+
+// ドラマ個別情報取得
+export async function getTVDetail(id: string): Promise<TVDetail> {
+  return fetchTMDB(`/tv/${id}?language=ja-JP`, 3600) as Promise<TVDetail>;
+}
+
+export async function getTVTrailer(id: string): Promise<TVTrailer> {
+  return fetchTMDB(`/tv/${id}/videos`, 3600) as Promise<TVTrailer>;
 }

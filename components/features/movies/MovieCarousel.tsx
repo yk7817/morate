@@ -49,7 +49,7 @@ export default function MovieCarousel({ title, movies, scores }: Props) {
       >
         {movies.map((movie, index) => (
           <SwiperSlide key={movie.id}>
-            <Link href={`/movie/${movie.id}`}>
+            <Link href={`/movies/${movie.id}`}>
               <Image
                 src={`${BASE_URL}/w500${movie.backdrop_path}`}
                 alt={movie.title}
@@ -104,20 +104,20 @@ export default function MovieCarousel({ title, movies, scores }: Props) {
             </div>
           </SwiperSlide>
         ))}
-        <div className="absolute bottom-0 left-0 z-1 flex justify-between h-full">
+        <div className="absolute bottom-0 left-0 z-10 flex justify-between h-full pointer-events-none">
           <button
             ref={prevRef}
-            className="movie_prev text-neutral-100 cursor-pointer bg-gray-900/20"
+            className="movie_prev text-neutral-100 cursor-pointer bg-gray-900/20 pointer-events-auto"
           >
-            <ChevronLeft className="text-neutral-100 w-15 h-15" />
+            <ChevronLeft className="text-neutral-100 w-15 h-15 pointer-events-auto" />
           </button>
         </div>
-        <div className="absolute bottom-0 right-0 z-1 flex justify-between h-full">
+        <div className="absolute bottom-0 right-0 z-10 flex justify-between h-full">
           <button
             ref={nextRef}
-            className="movie_next text-neutral-100 cursor-pointer bg-gray-900/20"
+            className="movie_next text-neutral-100 cursor-pointer bg-gray-900/20 pointer-events-auto"
           >
-            <ChevronRight className="text-neutral-100 w-15 h-15" />
+            <ChevronRight className="text-neutral-100 w-15 h-15 pointer-events-auto" />
           </button>
         </div>
       </Swiper>

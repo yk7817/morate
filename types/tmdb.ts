@@ -62,3 +62,56 @@ export type TMDBResponse<T> = {
   total_pages: number;
   total_results: number;
 };
+
+export type MovieDetail = {
+  id: number;
+  title: string;
+  overview: string;
+  genres: { name: string }[];
+  backdrop_path: string;
+  poster_path: string;
+  release_date: string;
+  runtime: number;
+  vote_average: number;
+  imdb_id: string;
+};
+
+export type MovieTrailer = {
+  results: {
+    key: string;
+    site: string;
+    id: string;
+    type: string;
+    published_at: string;
+  }[];
+};
+
+export type TVDetail = {
+  id: number;
+  name: string;
+  backdrop_path: string;
+  poster_path: string;
+  first_air_date: string;
+  genres: { name: string }[];
+  networks: { id: number; name: string; logo_path: string }[];
+  vote_average: number;
+  overview: string;
+  seasons: {
+    id: number;
+    name: string;
+    season_number: number;
+    episode_count: number;
+    poster_path: string;
+    air_date: string;
+  }[];
+};
+
+export type TVTrailer = {
+  results: {
+    key: string;
+    site: string;
+    id: string;
+    type: string;
+    published_at: string;
+  }[];
+};
